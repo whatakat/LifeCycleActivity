@@ -15,4 +15,7 @@ public final class LifeCyclePresenter {
         }
         return instanse;
     }
+    public int getCounter(){
+        return counter;
+    }
 }
