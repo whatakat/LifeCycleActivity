@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">LifeCycleActivity</string>
     <string name="demonstration">Demostration life cycle activity</string>
+    <string name="activity_main">Activity main!</string>
+    <string name="activity_second">Activity second!</string>
+    <string name="to_second">Second</string>
+    <string name="to_back">Back</string>
 </resources>
