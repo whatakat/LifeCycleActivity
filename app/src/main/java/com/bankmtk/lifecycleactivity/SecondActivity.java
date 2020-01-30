@@ -1,6 +1,9 @@
 package com.bankmtk.lifecycleactivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,4 +26,52 @@ public class SecondActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Second - onCreate()",Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(getApplicationContext(),"Second - onStart()",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(),"Second - onResume()",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplicationContext(),"Second - onPause()",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(),"Second - onStop()",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(getApplicationContext(),"Second - onRestart()",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(),"Second - onDestroy()",Toast.LENGTH_SHORT).show();
+    }
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.buttonBack:
+                EditText editText = (EditText)findViewById(R.id.editText3);
+                Intent intentResult = new Intent();
+                intentResult.putExtra("Number",editText.getText().toString());
+                setResult(Activity.RESULT_OK, intentResult);
+                finish();
+                break;
+                default:
+                    break;
+        }
+    }
 }
