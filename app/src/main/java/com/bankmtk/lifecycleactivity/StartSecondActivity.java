@@ -19,5 +19,8 @@ public class StartSecondActivity implements View.OnClickListener {
         Parcel parcel = new Parcel();
         parcel.text = txt.getText().toString();
         parcel.number = Integer.parseInt(num.getText().toString());
+        Intent intent = new Intent(sourceActivity, SecondActivity.class);
+        intent.putExtra(TEXT, parcel);
+        sourceActivity.startActivityForResult(intent,1);
     }
 }
